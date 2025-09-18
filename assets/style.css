@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+section {
+    padding: 20px;
+}
+h2 {
+    color: #d63384;
+}
+.galeria {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.regalo {
+    width: 200px;
+    text-align: center;
+}
+.regalo img {
+    width: 100%;
+    border-radius: 10px;
+}
+footer {
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
