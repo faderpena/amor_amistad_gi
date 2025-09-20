@@ -31,6 +31,13 @@ nav {
     gap: 10px;
 }
 
+/* Estilos para el mapa */
+#map {
+    height: 400px; /* Dale una altura para que sea visible */
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
 .tab-button {
     background-color: var(--color-gray);
     color: #fff;
@@ -70,7 +77,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 290px;
+    max-width: 300px;
     margin: 20px auto;
 }
 
@@ -185,4 +192,3 @@ img {
     font-weight: 700;
     color: var(--color-dark);
 }
-
