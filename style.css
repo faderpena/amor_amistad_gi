@@ -1,0 +1,173 @@
+:root {
+    --color-primary: #93BB54;
+    --color-dark: #3F3F3F;
+    --color-gray: #888988;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+header {
+    background-color: var(--color-dark);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab-button {
+    background-color: var(--color-gray);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+.tab-button:hover {
+    background-color: #717271;
+}
+
+.tab-button.active {
+    background-color: var(--color-primary);
+}
+
+main {
+    padding: 20px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Estilos de las tarjetas (cards) */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.card img {
+    /*border-radius: 50%;*/
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Estilos de Swiper */
+.swiper-container {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--color-primary) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary) !important;
+}
+
+/* Media Queries para diseño responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+/* --- Nuevos Estilos para Simular la Conversación --- */
+.response-bubble {
+    background-color: #e0e0e0; /* Un gris claro para el fondo */
+    border-radius: 16px 16px 16px 0; /* Bordes redondeados para simular una burbuja */
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sutil sombra para un efecto de elevación */
+}
+
+.response-bubble p {
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.response-bubble ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.response-bubble li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.response-bubble li strong {
+    font-weight: 700;
+    color: var(--color-dark);
+}
