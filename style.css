@@ -70,7 +70,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 300px;
+    max-width: 290px;
     margin: 20px auto;
 }
 
@@ -185,3 +185,4 @@ img {
     font-weight: 700;
     color: var(--color-dark);
 }
+
