@@ -2,56 +2,299 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Evento Amor y Amistad</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Evento de Personajes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
-        <h1>💖 Bienvenidos al Evento de Amor y Amistad 💖</h1>
-        <p>¡Celebremos juntos con regalos y sorpresas!</p>
+        <h1>Amigo Secreto</h1>
+        <nav>
+            <button class="tab-button active" data-tab="evento">Datos del Evento</button>
+            <button class="tab-button" data-tab="personajes">Personajes</button>
+            <button class="tab-button" data-tab="sorteo">Sorteo de Personajes</button>
+            <button class="tab-button" data-tab="regalos">Lista de Regalos</button>
+        </nav>
     </header>
 
-    <section id="sorteo">
-        <h2>🎁 Resultados del Sorteo</h2>
-        <ul>
-            <li>Ana regala a Luis</li>
-            <li>Carlos regala a Marta</li>
-            <li>Lucía regala a Pedro</li>
-            <!-- Agrega más resultados aquí -->
-        </ul>
-    </section>
+    <main>
+        <section id="evento" class="tab-content active">
+            <h2>Datos del Evento</h2>
+            <p><strong>Fecha:</strong> 26 de septiembre de 2025</p>
+            <p><strong>Lugar:</strong> Salón de la Justicia (Auditorio Piso 11) ANLA</p>
+            <p><strong>Hora:</strong> 04:00 PM</p>
+            <p>¡Prepárense para una tarde épica de regalos y juego de rol!</p>
+        </section>
 
-    <section id="regalos">
-        <h2>🎀 Opciones de Regalo</h2>
-        <div class="galeria">
-            <div class="regalo">
-                <img src="assets/regalo1.jpg" alt="Caja de chocolates">
-                <p>Caja de chocolates</p>
+        <section id="personajes" class="tab-content">
+            <h2>Personajes</h2>
+            <div class="swiper-container mySwiperPersonajes">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide card">
+                        <img src="./img/brujaescarlata.png" alt="Bruja Escarlata">
+                        <h3>Bruja Escarlata</h3>
+                        <ul>
+                            <li>Magia del caos.</li>
+                            <li>Vengadora.</li>
+                            <li>Realidad alterada.</li>
+                        </ul>
+						
+						<p><strong>Opciones de regalo:</strong></p>
+						<ul>
+						<li>Humidificador/difusor de aroma/pebetero - en mercado libre	</li>
+						<li><a href="https://www.panamericana.com.co/kit-de-pintar-por-numeros-hibiscus-rosie-s-644658/p" target="_blank">Kit de pintura por números</a> </li>
+						<li><a href="https://www.panamericana.com.co/soporte-para-plantas-de-24-cm-metalico-con-maceta-681401/p" target="_blank">Matera</a></li>
+						</ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/chapatin.png" alt="Chapatin">
+                        <h3>Chapatin</h3>
+                        <ul>
+                            <li>Sombrero y bastón.</li>
+                            <li>Distraído pero ingenioso.</li>
+                            <li>"¡Ay, pero qué bruto soy!".</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/coulson.png" alt="Coulson">
+                        <h3>Coulson</h3>
+                        <ul>
+                            <li>Agente de S.H.I.E.L.D.</li>
+                            <li>Fanático del Capitán América.</li>
+                            <li>Amigo de los Vengadores.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/doctorstrange.png" alt="Doctor Strange">
+                        <h3>Doctor Strange</h3>
+                        <ul>
+                            <li>Hechicero Supremo.</li>
+                            <li>Mente brillante.</li>
+                            <li>Controla las artes místicas.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/donlucas.png" alt="Don Lucas">
+                        <h3>Don Lucas</h3>
+                        <ul>
+                            <li>Padre de Lucas Tañeda.</li>
+                            <li>Señor de la casa.</li>
+                            <li>Personalidad fuerte.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/eltripaseca.png" alt="El Tripaseca">
+                        <h3>El Tripaseca</h3>
+                        <ul>
+                            <li>Villano del Chavo del Ocho.</li>
+                            <li>Rival de El Chapulín Colorado.</li>
+                            <li>Aparición esporádica.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/gamora.png" alt="Gamora">
+                        <h3>Gamora</h3>
+                        <ul>
+                            <li>Asesina.</li>
+                            <li>Hija de Thanos.</li>
+                            <li>Guardiana de la galaxia.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/groot.png" alt="Groot">
+                        <h3>Groot</h3>
+                        <ul>
+                            <li>Árbol.</li>
+                            <li>"Yo soy Groot".</li>
+                            <li>Fuerza sobrehumana.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/happyhogan.png" alt="Happy Hogan (Freak)">
+                        <h3>Happy Hogan (Freak)</h3>
+                        <ul>
+                            <li>Jefe de seguridad de Stark.</li>
+                            <li>Amigo de Iron Man.</li>
+                            <li>Leal a la familia.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/ironman.png" alt="Iron Man">
+                        <h3>Iron Man</h3>
+                        <ul>
+                            <li>Genio millonario.</li>
+                            <li>Armadura de alta tecnología.</li>
+                            <li>Fundador de los Vengadores.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/loki.png" alt="Loki">
+                        <h3>Loki</h3>
+                        <ul>
+                            <li>Dios de las mentiras.</li>
+                            <li>Hermano de Thor.</li>
+                            <li>Maestro del engaño.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/lucastañeda.png" alt="Lucas Tañeda">
+                        <h3>Lucas Tañeda</h3>
+                        <ul>
+                            <li>Compañero del Chapulín Colorado.</li>
+                            <li>Un poco tonto.</li>
+                            <li>Frase: "Te doy una torta".</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/magneto.png" alt="Magneto">
+                        <h3>Magneto</h3>
+                        <ul>
+                            <li>Controla el metal.</li>
+                            <li>Amigo de Charles Xavier.</li>
+                            <li>Mutante legendario.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/mystique.png" alt="Mystique">
+                        <h3>Mystique</h3>
+                        <ul>
+                            <li>Cambia de forma.</li>
+                            <li>Mutante.</li>
+                            <li>Hábil combatiente.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/rocketraccon.png" alt="Rocket Raccoon">
+                        <h3>Rocket Raccoon</h3>
+                        <ul>
+                            <li>Genio de la tecnología.</li>
+                            <li>Le encanta explotar cosas.</li>
+                            <li>Mejor amigo de Groot.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/storm.png" alt="Storm">
+                        <h3>Storm</h3>
+                        <ul>
+                            <li>Controla el clima.</li>
+                            <li>Líder de los X-Men.</li>
+                            <li>Diosa en Wakanda.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/tormenta.png" alt="Tormenta">
+                        <h3>Tormenta</h3>
+                        <ul>
+                            <li>Controla el clima.</li>
+                            <li>Líder de los X-Men.</li>
+                            <li>Diosa en Wakanda.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/tripaseca.png" alt="Tripaseca">
+                        <h3>Tripaseca</h3>
+                        <ul>
+                            <li>Villano de Chespirito.</li>
+                            <li>Parte de la banda de "El Tripaseca".</li>
+                            <li>Apodo "El Tripaseca".</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/viudanegra1.png" alt="Viuda Negra 1">
+                        <h3>Viuda Negra 1</h3>
+                        <ul>
+                            <li>Ex-espía.</li>
+                            <li>Vengadora.</li>
+                            <li>Maestra del combate.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/viudanegra2.png" alt="Viuda Negra 2">
+                        <h3>Viuda Negra 2</h3>
+                        <ul>
+                            <li>Agente encubierta.</li>
+                            <li>Hermana adoptiva.</li>
+                            <li>Maestra del engaño.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <div class="regalo">
-                <img src="assets/regalo2.jpg" alt="Taza personalizada">
-                <p>Taza personalizada</p>
+        </section>
+
+        <section id="sorteo" class="tab-content">
+            <h2>Sorteo de Personajes (Realizado con IA)</h2>
+            <div class="response-bubble">
+                <p>Claro, aquí tienes una asignación aleatoria para el juego de amigo secreto. ¡Que se diviertan! 🎉</p>
+                <ul>
+                    <li><strong>Storm</strong> le regala a <strong>Bruja Escarlata</strong></li>
+                    <li><strong>Happy Hogan (Freak)</strong> le regala a <strong>Lucas Tañeda</strong></li>
+                    <li><strong>Coulson</strong> le regala a <strong>Chapatin</strong></li>
+                    <li><strong>Iron Man</strong> le regala a <strong>Mystique</strong></li>
+                    <li><strong>Magneto</strong> le regala a <strong>Groot</strong></li>
+                    <li><strong>Tormenta</strong> le regala a <strong>Tripaseca</strong></li>
+                    <li><strong>Don Lucas</strong> le regala a <strong>Rocket Raccoon</strong></li>
+                    <li><strong>Gamora</strong> le regala a <strong>Coulson</strong></li>
+                    <li><strong>Groot</strong> le regala a <strong>Don Lucas</strong></li>
+                    <li><strong>Mystique</strong> le regala a <strong>Gamora</strong></li>
+                    <li><strong>Bruja Escarlata</strong> le regala a <strong>Happy Hogan (Freak)</strong></li>
+                    <li><strong>Tripaseca</strong> le regala a <strong>Loki</strong></li>
+                    <li><strong>Doctor Strange</strong> le regala a <strong>Viuda Negra 2</strong></li>
+                    <li><strong>Lucas Tañeda</strong> le regala a <strong>Iron Man</strong></li>
+                    <li><strong>Rocket Raccoon</strong> le regala a <strong>Viuda Negra 1</strong></li>
+                    <li><strong>Viuda Negra 1</strong> le regala a <strong>El Tripaseca</strong></li>
+                    <li><strong>Viuda Negra 2</strong> le regala a <strong>Storm</strong></li>
+                    <li><strong>El Tripaseca</strong> le regala a <strong>Doctor Strange</strong></li>
+                    <li><strong>Chapatin</strong> le regala a <strong>Magneto</strong></li>
+                    <li><strong>Loki</strong> le regala a <strong>Tormenta</strong></li>
+                </ul>
             </div>
-            <div class="regalo">
-                <img src="assets/regalo3.jpg" alt="Ramo de flores">
-                <p>Ramo de flores</p>
+        </section>
+
+        <section id="regalos" class="tab-content">
+            <h2>Lista de Regalos</h2>
+             <div class="swiper-container mySwiperRegalos">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide card">
+                        <img src="./img/.png" alt="Iron Man Regalo">
+                        <h3>Iron Man</h3>
+                        <ul>
+                            <li>Un set de herramientas de vibranium.</li>
+                            <li>Un prototipo de reactor arc.</li>
+                            <li>Un fin de semana en el espacio.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/.png" alt="Storm Regalo">
+                        <h3>Storm</h3>
+                        <ul>
+                            <li>Un paraguas indestructible.</li>
+                            <li>Un libro sobre meteorología.</li>
+                            <li>Un viaje al polo norte.</li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="./img/.png" alt="Groot Regalo">
+                        <h3>Groot</h3>
+                        <ul>
+                            <li>Un set de luces para sus ramas.</li>
+                            <li>Unos audífonos para escuchar música.</li>
+                            <li>Una maceta nueva.</li>
+                        </ul>
+                    </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+                 <div class="swiper-button-next"></div>
+                 <div class="swiper-button-prev"></div>
             </div>
-            <!-- Agrega más regalos aquí -->
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="evento">
-        <h2>📅 Detalles del Evento</h2>
-        <p><strong>Fecha:</strong> 16 de septiembre</p>
-        <p><strong>Hora:</strong> 6:00 PM</p>
-        <p><strong>Lugar:</strong> Salón comunal del barrio</p>
-        <p><strong>Instrucciones:</strong> Llevar el regalo envuelto y confirmar asistencia.</p>
-    </section>
-
-    <footer>
-        <p>💌 Contacto: organizador@evento.com</p>
-    </footer>
-
-    <script src="assets/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
