@@ -7,25 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+	 <!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </head>
 <body>
     <header>
-        <h1>Amigo Secreto</h1>
+        <h1>Amigo Secreto - Grupo de Instrumentos</h1>
         <nav>
             <button class="tab-button active" data-tab="evento">Datos del Evento</button>
             <button class="tab-button" data-tab="personajes">Personajes</button>
             <button class="tab-button" data-tab="sorteo">Sorteo de Personajes</button>
-            <button class="tab-button" data-tab="regalos">Lista de Regalos</button>
         </nav>
     </header>
 
     <main>
         <section id="evento" class="tab-content active">
             <h2>Datos del Evento</h2>
+			<p>¡Prepárense para una tarde épica de regalos y juego de rol!</p>
             <p><strong>Fecha:</strong> 26 de septiembre de 2025</p>
-            <p><strong>Lugar:</strong> Salón de la Justicia (Auditorio Piso 11) ANLA</p>
             <p><strong>Hora:</strong> 04:00 PM</p>
-            <p>¡Prepárense para una tarde épica de regalos y juego de rol!</p>
+			<p><strong>Lugar:</strong> Salón de la Justicia (Auditorio Piso 11) ANLA</p>
+			<div id="map"></map>
+            
         </section>
 
         <section id="personajes" class="tab-content">
@@ -37,7 +45,7 @@
                         <h3>Bruja Escarlata</h3>
                         <ul>
                             <li>Magia del caos.</li>
-                            <li>Vengadora.</li>
+                            <li>Manipulación Mental.</li>
                             <li>Realidad alterada.</li>
                         </ul>
 						
@@ -52,9 +60,9 @@
                         <img src="./img/chapatin.png" alt="Chapatin">
                         <h3>Chapatin</h3>
                         <ul>
-                            <li>Sombrero y bastón.</li>
-                            <li>Distraído pero ingenioso.</li>
-                            <li>"¡Ay, pero qué bruto soy!".</li>
+                            <li>Viejito tierno y coqueto.</li>
+                            <li>Satírico y burlesco.</li>
+                            <li>"¡Ya me dio cosa!".</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -68,8 +76,8 @@
                         <h3>Coulson</h3>
                         <ul>
                             <li>Agente de S.H.I.E.L.D.</li>
-                            <li>Fanático del Capitán América.</li>
-                            <li>Amigo de los Vengadores.</li>
+                            <li>Experto en combate cuerpo contra cuerpo.</li>
+                            <li>Es un gran estratega.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -97,9 +105,9 @@
                         <img src="./img/donlucas.png" alt="Don Lucas">
                         <h3>Don Lucas</h3>
                         <ul>
-                            <li>Padre de Lucas Tañeda.</li>
-                            <li>Señor de la casa.</li>
-                            <li>Personalidad fuerte.</li>
+                            <li>Ve el mundo de manera diferente, posiblemente tiene algún padecimiento mental.</li>
+                            <li>¿Sabías que la gente anda diciendo que tú y yo estamos locos?</li>
+                            <li>¡Dígame licenciado!</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -112,9 +120,9 @@
                         <img src="./img/eltripaseca.png" alt="El Tripaseca">
                         <h3>El Tripaseca</h3>
                         <ul>
-                            <li>Villano del Chavo del Ocho.</li>
-                            <li>Rival de El Chapulín Colorado.</li>
-                            <li>Aparición esporádica.</li>
+                            <li>Gángster sumamente peligroso.</li>
+                            <li>Enemigo de El Chapulín Colorado.</li>
+                            <li>Conocía al Chapulin desde que los dos eran niños</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -127,9 +135,9 @@
                         <img src="./img/gamora.png" alt="Gamora">
                         <h3>Gamora</h3>
                         <ul>
-                            <li>Asesina.</li>
+                            <li>Maestra en artes marciales y espadachina.</li>
                             <li>Hija de Thanos.</li>
-                            <li>Guardiana de la galaxia.</li>
+                            <li>"Mujer más peligrosa de la galaxia".</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -142,9 +150,9 @@
                         <img src="./img/groot.png" alt="Groot">
                         <h3>Groot</h3>
                         <ul>
-                            <li>Árbol.</li>
-                            <li>"Yo soy Groot".</li>
-                            <li>Fuerza sobrehumana.</li>
+                            <li>I'm Groot.</li>
+                            <li>I'm Groot?.</li>
+                            <li>I'm Groot!!, I'm Groot :( </li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -159,7 +167,7 @@
                         <ul>
                             <li>Jefe de seguridad de Stark.</li>
                             <li>Amigo de Iron Man.</li>
-                            <li>Leal a la familia.</li>
+                            <li>Fuerza y resistencia sobrehumanas.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -172,7 +180,7 @@
                         <img src="./img/ironman.png" alt="Iron Man">
                         <h3>Iron Man</h3>
                         <ul>
-                            <li>Genio millonario.</li>
+                            <li>"Soy un genio, millonario, playboy, filántropo!!".</li>
                             <li>Armadura de alta tecnología.</li>
                             <li>Fundador de los Vengadores.</li>
                         </ul>
@@ -189,7 +197,7 @@
                         <ul>
                             <li>Dios de las mentiras.</li>
                             <li>Hermano de Thor.</li>
-                            <li>Maestro del engaño.</li>
+                            <li>Cambiaformas y mago.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -202,9 +210,9 @@
                         <img src="./img/lucastañeda.png" alt="Lucas Tañeda">
                         <h3>Lucas Tañeda</h3>
                         <ul>
-                            <li>Compañero del Chapulín Colorado.</li>
-                            <li>Un poco tonto.</li>
-                            <li>Frase: "Te doy una torta".</li>
+                            <li>Lucas suele presentar un trastorno menor o menos grave que el de Chaparrón Bonaparte</li>
+                            <li>Estás en lo cierto!!</li>
+                            <li>Te dio otra de tus chiripiorcas. Pero ahorita te arreglo...</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -217,8 +225,8 @@
                         <img src="./img/magneto.png" alt="Magneto">
                         <h3>Magneto</h3>
                         <ul>
-                            <li>Controla el metal.</li>
-                            <li>Amigo de Charles Xavier.</li>
+                            <li>Habilidad para controlar y manipular campos magnéticos.</li>
+                            <li>Tiene entrenamiento para resistir ataques psíquicos.</li>
                             <li>Mutante legendario.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
@@ -232,8 +240,8 @@
                         <img src="./img/mystique.png" alt="Mystique">
                         <h3>Mystique</h3>
                         <ul>
-                            <li>Cambia de forma.</li>
-                            <li>Mutante.</li>
+                            <li>Metamorfosis/Cambio de forma.</li>
+                            <li>Envejecimiento retardado.</li>
                             <li>Hábil combatiente.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
@@ -247,9 +255,9 @@
                         <img src="./img/rocketraccon.png" alt="Rocket Raccoon">
                         <h3>Rocket Raccoon</h3>
                         <ul>
-                            <li>Genio de la tecnología.</li>
-                            <li>Le encanta explotar cosas.</li>
-                            <li>Mejor amigo de Groot.</li>
+                            <li>Genio de la tecnología y comunicaciones.</li>
+                            <li>Sentidos Agudizados.</li>
+                            <li>"¡No hay nada como yo, excepto yo!".</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -262,13 +270,13 @@
                         <img src="./img/storm.png" alt="Storm">
                         <h3>Storm</h3>
                         <ul>
-                            <li>Controla el clima.</li>
-                            <li>Líder de los X-Men.</li>
-                            <li>Diosa en Wakanda.</li>
+                            <li>Controla el clima (Tiempo atmosférico).</li>
+                            <li>Mutante de nivel de Omega.</li>
+                            <li>Hábil combatiente y líder.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
-							<li>libros de neurología, ciencia, filosofía o psicología.</li>
+							<li>Libros de neurología, ciencia, filosofía o psicología.</li>
 							<li>Vino</li>
 							<li>Chocolate / café</li>
 						</ul>
@@ -277,9 +285,9 @@
                         <img src="./img/tormenta.png" alt="Tormenta">
                         <h3>Tormenta</h3>
                         <ul>
-                            <li>Controla el clima.</li>
+                            <li>Capacidad de generar relámpagos, tornados, huracanes y cambios de temperatura.</li>
                             <li>Líder de los X-Men.</li>
-                            <li>Diosa en Wakanda.</li>
+                            <li>Sus poderes están vinculados a sus emociones.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -293,8 +301,8 @@
                         <h3>Tripaseca</h3>
                         <ul>
                             <li>Villano de Chespirito.</li>
-                            <li>Parte de la banda de "El Tripaseca".</li>
-                            <li>Apodo "El Tripaseca".</li>
+                            <li>Da las órdenes en el grupo de mafiosos.</li>
+                            <li>Complice de El Cuajináis</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -307,9 +315,9 @@
                         <img src="./img/viudanegra1.png" alt="Viuda Negra 1">
                         <h3>Viuda Negra 1</h3>
                         <ul>
-                            <li>Ex-espía.</li>
-                            <li>Vengadora.</li>
-                            <li>Maestra del combate.</li>
+                            <li>Maestra ex-espía.</li>
+                            <li>Maestra de artes marciales.</li>
+                            <li>Mejorada mediante Biotecnología.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -322,9 +330,9 @@
                         <img src="./img/viudanegra2.png" alt="Viuda Negra 2">
                         <h3>Viuda Negra 2</h3>
                         <ul>
-                            <li>Agente encubierta.</li>
-                            <li>Hermana adoptiva.</li>
-                            <li>Maestra del engaño.</li>
+                            <li>Afinidad por la manipulación psicológica.</li>
+                            <li>Habilidad del responder rápidamente a situaciones tácticas cambiantes.</li>
+                            <li>Estratega, táctica y comandante de campo.</li>
                         </ul>
 						<p><strong>Opciones de regalo:</strong></p>
 						<ul>
@@ -343,7 +351,7 @@
         <section id="sorteo" class="tab-content">
             <h2>Sorteo de Personajes (Realizado con IA)</h2>
             <div class="response-bubble">
-                <p>Claro, aquí tienes una asignación aleatoria para el juego de amigo secreto. ¡Que se diviertan! 🎉</p>
+                <p>Se le preguntó a la IA que hicera un emparejamiento aleatorio, su respuesta <br><i>Claro, aquí tienes una asignación aleatoria para el juego de amigo secreto. ¡Que se diviertan! 🎉</i></p>
                 <ul>
                     <li><strong>Storm</strong> le regala a <strong>Bruja Escarlata</strong></li>
                     <li><strong>Happy Hogan (Freak)</strong> le regala a <strong>Lucas Tañeda</strong></li>
@@ -369,43 +377,7 @@
             </div>
         </section>
 
-        <section id="regalos" class="tab-content">
-            <h2>Lista de Regalos</h2>
-             <div class="swiper-container mySwiperRegalos">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide card">
-                        <img src="./img/.png" alt="Iron Man Regalo">
-                        <h3>Iron Man</h3>
-                        <ul>
-                            <li>Un set de herramientas de vibranium.</li>
-                            <li>Un prototipo de reactor arc.</li>
-                            <li>Un fin de semana en el espacio.</li>
-                        </ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/.png" alt="Storm Regalo">
-                        <h3>Storm</h3>
-                        <ul>
-                            <li>Un paraguas indestructible.</li>
-                            <li>Un libro sobre meteorología.</li>
-                            <li>Un viaje al polo norte.</li>
-                        </ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/.png" alt="Groot Regalo">
-                        <h3>Groot</h3>
-                        <ul>
-                            <li>Un set de luces para sus ramas.</li>
-                            <li>Unos audífonos para escuchar música.</li>
-                            <li>Una maceta nueva.</li>
-                        </ul>
-                    </div>
-                    </div>
-                <div class="swiper-pagination"></div>
-                 <div class="swiper-button-next"></div>
-                 <div class="swiper-button-prev"></div>
-            </div>
-        </section>
+        
     </main>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
