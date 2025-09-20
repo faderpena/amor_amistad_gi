@@ -23,6 +23,15 @@ header h1 {
     font-size: 2em;
 }
 
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--color-dark);
+    color: #fff;
+}
+
 nav {
     margin-top: 10px;
     display: flex;
