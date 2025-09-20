@@ -76,10 +76,14 @@ main {
 
 .card img {
     /*border-radius: 50%;*/
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 15px;
+    width:200px;
+    height: 250px;
+    object-fit: scale-down;
+  margin-bottom: 15px;
+}
+
+img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .card h3 {
@@ -101,26 +105,36 @@ main {
     font-size: 0.9em;
 }
 
-/* Estilos de Swiper */
+/* --- Estilos para el Carrusel Swiper --- */
+
+/* Contenedor principal del carrusel */
 .swiper-container {
     width: 100%;
     height: auto;
-    padding-bottom: 50px;
+    position: relative; /* Asegura que los elementos posicionados se mantengan dentro del contenedor */
+    padding-top: 40px; /* Crea espacio en la parte superior para la paginación */
+    padding-bottom: 20px;
 }
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Posiciona los puntos de paginación en la parte superior */
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 0;
+    bottom: auto !important; /* Desactiva la posición inferior predeterminada */
 }
 
-.swiper-button-next, .swiper-button-prev {
+/* Mantiene las flechas de navegación a los lados */
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50% !important; /* Vuelve a centrar las flechas verticalmente */
+    transform: translateY(-50%) !important;
     color: var(--color-primary) !important;
 }
 
+/* Color para el punto de paginación activo */
 .swiper-pagination-bullet-active {
     background: var(--color-primary) !important;
 }
+
 
 /* Media Queries para diseño responsive */
 @media (max-width: 768px) {
