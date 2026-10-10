@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "titulo": "Amigo Secreto - Grupo de Instrumentos",
+    "version": "2026",
+    "actualizado": "2026-10-10",
+    "origen": "Personajes_2026.md (respuestas del formulario, 7 al 10 de octubre de 2026)",
+    "nota": "Este archivo es la única fuente de datos de la página. Edita aquí personajes, descripciones ('poderes'), imágenes ('url') y opciones de regalo. No hace falta tocar index.html ni script.js. El orden de la lista 'personajes' es el orden en que se muestran las tarjetas (están en orden alfabético)."
+  },
+  "ayuda": {
+    "url": "URL de la imagen del personaje. Ruta relativa (./img/batman.png) o URL completa (https://...). Si queda vacío ('') o la imagen no carga, la tarjeta muestra las iniciales del personaje. En la lista de 2026 las imágenes son enlaces externos (Google, Pinterest, Wikipedia, etc.): si alguno deja de cargar, la tarjeta vuelve a mostrar las iniciales.",
+    "poderes": "Lista de frases cortas que salen como etiquetas bajo el nombre. Es opcional: puede quedar vacía ([]) y la tarjeta no muestra esa parte.",
+    "regalos": "Cada regalo admite: 'nombre' (obligatorio), 'url' (opcional, abre el enlace del producto) y 'nota' (opcional, aclaración en cursiva debajo del nombre).",
+    "sorteo": "La lista 'sorteo.asignaciones' indica quién le regala a quién: 'de' = personaje que regala, 'para' = personaje que recibe. Si la lista queda vacía, la pestaña Sorteo muestra un aviso de que está pendiente."
+  },
+  "evento": {
+    "titulo": "Datos del Evento",
+    "fecha": "26 de septiembre de 2026",
+    "hora": "04:00 PM",
+    "lugar": "Salón de la Justicia (Auditorio Piso 11) ANLA",
+    "coordenadas": [4.623449, -74.06847],
+    "zoom": 16,
+    "aviso": {
+      "titulo": "Nota 1 ⚠️:",
+      "items": [
+        "🚨 2 Mafaldas (Mafalda 1 y Mafalda 2): revise el listado de regalos para ubicar la suya.",
+        "Por favor, revise el listado de regalos para que ubique su personaje y consulte a quién debe dar regalo en el botón \"Sorteo de Personajes\"."
+      ]
+    }
+  },
+  "sorteo": {
+    "titulo": "Sorteo de Personajes",
+    "nota": "Emparejamiento generado al azar (nadie se regala a sí mismo): cada personaje regala a alguien distinto y recibe un solo regalo.",
+    "asignaciones": [
+      { "de": "Batman", "para": "Obi one kenobi" },
+      { "de": "Dr. Facilier", "para": "Rick Prime" },
+      { "de": "Drácula", "para": "Rafiki del rey León" },
+      { "de": "Elma Chacón", "para": "Drácula" },
+      { "de": "Inspector gadget", "para": "Mafalda 2" },
+      { "de": "Jane Foster", "para": "Snoopy" },
+      { "de": "Mafalda 1", "para": "Elma Chacón" },
+      { "de": "Mafalda 2", "para": "Walter White — Breaking Bad" },
+      { "de": "Michael Corleone", "para": "Inspector gadget" },
+      { "de": "Mushu (el dragón de Mulán)", "para": "Dr. Facilier" },
+      { "de": "Obi one kenobi", "para": "Mafalda 1" },
+      { "de": "Rafiki del rey León", "para": "Michael Corleone" },
+      { "de": "Rick Prime", "para": "Star fire" },
+      { "de": "Snoopy", "para": "Tormenta" },
+      { "de": "Star fire", "para": "Mushu (el dragón de Mulán)" },
+      { "de": "Tormenta", "para": "Batman" },
+      { "de": "Walter White — Breaking Bad", "para": "Jane Foster" }
+    ]
+  },
+  "personajes": [
+    {
+      "id": "batman",
+      "nombre": "Batman",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaU4LqT1upNlvDSm-VElyv4AEdaJgpuEtEiCMLbyc_A&s=10",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Vino", "url": null, "nota": null },
+        { "nombre": "Guantes de moto", "url": null, "nota": null },
+        { "nombre": "Café", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "dr-facilier",
+      "nombre": "Dr. Facilier",
+      "url": "https://assets.mycast.io/characters/dr-facilier-24103467-normal.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Multipuerto USB", "url": null, "nota": null },
+        { "nombre": "Tipo C - Carga rápida (cargador o cable)", "url": null, "nota": null },
+        { "nombre": "Aromáticas Twinings", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "dracula",
+      "nombre": "Drácula",
+      "url": "https://s3.amazonaws.com/rtvc-assets-senalcolombia.gov.co/s3fs-public/inline-images/pelicula-dracula-bram-stoker-historia-real-vlad-tepes-copolla-3.jpg",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Maleta pequeña Decathlon similar a la del enlace",
+          "url": "https://www.decathlon.com.co/p/344147-67806-morral-de-senderismo-10l-quechua-nh100-negro.html",
+          "nota": "Colores oscuros. Endulzada: frutas como arándanos, fresas, manzanas de agua."
+        },
+        {
+          "nombre": "Libro: La mirada de las plantas, de Edmundo Paz Soldán — o Psicología ambiental",
+          "url": "https://www.instagram.com/lavalijadefuego",
+          "nota": "Librería La Valija de Fuego, Carrera 7 # 45 - 52. Endulzada: frutas como arándanos, fresas, manzanas de agua."
+        },
+        {
+          "nombre": "Café de producción local, por cooperativas de campesinos",
+          "url": "https://varietale.com/",
+          "nota": "Sitios recomendados: tiendas como Varietale, cerca a la Javeriana. Endulzada: frutas como arándanos, fresas, manzanas de agua."
+        }
+      ]
+    },
+    {
+      "id": "elma-chacon",
+      "nombre": "Elma Chacón",
+      "url": "https://thumbs.dreamstime.com/b/dedo-del-pie-tropezado-41886132.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "El método Lean Startup (libro)", "url": null, "nota": null },
+        { "nombre": "De cero a uno (libro)", "url": null, "nota": null },
+        { "nombre": "El libro negro del emprendedor (libro)", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "inspector-gadget",
+      "nombre": "Inspector gadget",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLFP0pKTo1c4HiHjq_WrcKQzOiHMn3iPSDIPfTul9V7dI7Zw_T9CTBH4e2&s=10",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Organizador de cables",
+          "url": "https://articulo.mercadolibre.com.co/MCO-2172939888-estuche-organizador-de-cables-cargador-usb-auriculares-_JM",
+          "nota": null
+        },
+        {
+          "nombre": "Juego de mesa",
+          "url": "https://www.mercadolibre.com.co/juego-de-mesa-los-hombres-lobo-de-castronegro-asmodee/p/MCO19560695",
+          "nota": "Como sugerencia: Los hombres lobo de Castronegro (Asmodee)"
+        },
+        { "nombre": "Cualquier cosa", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "jane-foster",
+      "nombre": "Jane Foster",
+      "url": "https://playcontestofchampions.com/wp-content/uploads/2023/04/champion-thor-jane-foster.webp",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Bono de Falabella", "url": null, "nota": null },
+        { "nombre": "Bono de Stradivarius", "url": null, "nota": null },
+        { "nombre": "Bono de H & M", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "mafalda-1",
+      "nombre": "Mafalda 1",
+      "url": "https://ih1.redbubble.net/image.2410044500.1581/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Libro: Alice's Adventures in Wonderland (versión en inglés)", "url": null, "nota": "Disponible en Panamericana" },
+        { "nombre": "Libro: Meditaciones, de Marco Aurelio", "url": null, "nota": "Disponible en Panamericana" },
+        {
+          "nombre": "Correa de yoga azul 2,5 m",
+          "url": "https://www.decathlon.com.co/p/183211-99309-correa-yoga-azul-25-m.html",
+          "nota": "La respuesta solo traía el enlace, sin descripción."
+        }
+      ]
+    },
+    {
+      "id": "mafalda-2",
+      "nombre": "Mafalda 2",
+      "url": "https://i.pinimg.com/736x/aa/4b/b2/aa4bb272ea5fb3cda6bba4ffe7a68b49.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Difusor de aceites / aromatizante", "url": null, "nota": null },
+        { "nombre": "Vela aromatizante de vainilla", "url": null, "nota": null },
+        { "nombre": "Taza artesanal para el café", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "michael-corleone",
+      "nombre": "Michael Corleone",
+      "url": "https://f.rpp-noticias.io/2024/10/10/510351_1653388.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Bolas de tenis + chocolate", "url": null, "nota": null },
+        { "nombre": "Novela sencilla y corta en inglés, o novela en español basada en fraude financiero, o bono Librería Nacional", "url": null, "nota": null },
+        { "nombre": "Rapidógrafos 0.2 color negro + chocolates", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "mushu",
+      "nombre": "Mushu (el dragón de Mulán)",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXazOVni58jv8j_WQrvttQ2r3TGhw12MMH6yHyv0Gdbg&s=10",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Libro: Burlar al diablo, de Napoleon Hill",
+          "url": "https://www.buscalibre.com.co/libros/search/?q=burlar+al+diablo",
+          "nota": null
+        },
+        {
+          "nombre": "Set x 2 Mug Halloween Lobo + Vampiro",
+          "url": "https://www.vajillascorona.com.co/categorias/hogar/vajillas/mugs/set-x-2-mug-halloween-lobo-vampiro-280ml/p/SL120J406002D",
+          "nota": null
+        },
+        {
+          "nombre": "Bolso para Mujer",
+          "url": "https://co.totto.com/bolso-para-mujer-smooth-tipo-crossbody-pequeno-rosado-ma02smh003-25260-p4a/p?skuId=61247",
+          "nota": null
+        }
+      ]
+    },
+    {
+      "id": "obi-one-kenobi",
+      "nombre": "Obi one kenobi",
+      "url": "https://live.staticflickr.com/4857/46152367942_97820f9207_b.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Chocolatinas suizas", "url": null, "nota": null },
+        { "nombre": "Bono Decathlon", "url": null, "nota": null },
+        { "nombre": "Libro de Mario Mendoza", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "rafiki",
+      "nombre": "Rafiki del rey León",
+      "url": "https://media.tenor.com/6_5Rp-ej6DAAAAAe/gif.png",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Pad mouse de este estilo (no necesariamente el color 🙂)",
+          "url": "https://share.google/skAzhoTwvKnZ4p074",
+          "nota": null
+        },
+        { "nombre": "Marcadores borrables, resaltadores 😍🖍️💜", "url": null, "nota": null },
+        { "nombre": "Lo que tú quieras 😋", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "rick-prime",
+      "nombre": "Rick Prime",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWOz98W14y-ZKccwIX64GvcfVVfZLrCrZQ0klVTs1sAoyUCNKB2fCGpXS&s=10",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Café Soca Edición Especial Soca Honey 200 g",
+          "url": "https://cafesoca.com/products/edicion-especial-soca-honey-200g?variant=46595930783943",
+          "nota": null
+        },
+        { "nombre": "Ésika Crema Facial Hidra Reafirmante Triple Acción Max 40+", "url": null, "nota": null },
+        {
+          "nombre": "Billetera Hombre Tarjetero Metálica Anti-clonación RFID Gris",
+          "url": "https://articulo.mercadolibre.com.co/MCO-1965132963-billetera-hombre-tarjetero-metalica-anti-clonacion-rfid-_JM",
+          "nota": null
+        }
+      ]
+    },
+    {
+      "id": "snoopy",
+      "nombre": "Snoopy",
+      "url": "https://i.pinimg.com/736x/74/17/a0/7417a0f85ebcc36742f35152551749e4.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Algo de Snoopy", "url": null, "nota": null },
+        { "nombre": "Muchas frutas", "url": null, "nota": null },
+        { "nombre": "Un libro", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "star-fire",
+      "nombre": "Star fire",
+      "url": "https://i.pinimg.com/736x/47/1e/93/471e93441e4f5377fe55f053a71c5c5c.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Difusor de aromas para casa", "url": null, "nota": null },
+        { "nombre": "Libro \"Nosotras que nos queremos tanto\", de Marcella Serrano — o un libro que me recomiendes", "url": null, "nota": null },
+        { "nombre": "Juego de mesa pirática 🏴‍☠️", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "tormenta",
+      "nombre": "Tormenta",
+      "url": "https://i.pinimg.com/736x/db/ca/59/dbca59d9f56820a97c77b99beb673fe8.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Libro: Anoche soñé que mi cuerpo era un caudal", "url": null, "nota": "Autora: Irina Petro de León" },
+        { "nombre": "Libro: Factotum", "url": null, "nota": "Autor: Charles Bukowski" },
+        { "nombre": "Libro: La soledad de un cuerpo acostumbrado a la herida", "url": null, "nota": "Autora: Elvira Sastre" }
+      ]
+    },
+    {
+      "id": "walter-white",
+      "nombre": "Walter White — Breaking Bad",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqspsg6ec7MLRJflqS8wgwRVAOEUgM1ObU9hGKakhe8J1XXoBXCiB-DR8&s=10",
+      "poderes": [],
+      "regalos": [
+        {
+          "nombre": "Copa para Vino Tinto Set x4 Mesa de Navidad Roberta Allen",
+          "url": "https://www.falabella.com.co/falabella-co/product/883504119/Copa-para-Vino-Tinto-Set-x4-Mesa-de-Navidad-Roberta-Allen/883504119",
+          "nota": "Las tres opciones eran el mismo enlace."
+        }
+      ]
+    }
+  ]
+}
