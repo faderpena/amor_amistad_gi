@@ -3,390 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigo Secreto - Evento de Personajes</title>
+    <meta name="theme-color" content="#07080c">
+    <title>Amigo Secreto - Grupo de Instrumentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="">
+    <!-- style.css va DESPUÉS de Leaflet para que el tema oscuro pueda sobrescribir sus estilos -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-	 <!-- Make sure you put this AFTER Leaflet's CSS -->
-	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
 </head>
 <body>
     <header>
         <h1>Amigo Secreto - Grupo de Instrumentos</h1>
-        <nav>
-            <button class="tab-button active" data-tab="evento">Datos del Evento</button>
-            <button class="tab-button" data-tab="personajes">Personajes</button>
-            <button class="tab-button" data-tab="sorteo">Sorteo de Personajes</button>
+        <nav role="tablist" aria-label="Secciones">
+            <button class="tab-button active" data-tab="evento" role="tab" aria-selected="true">Datos del Evento</button>
+            <button class="tab-button" data-tab="personajes" role="tab" aria-selected="false">Personajes</button>
+            <button class="tab-button" data-tab="sorteo" role="tab" aria-selected="false">Sorteo de Personajes</button>
         </nav>
     </header>
 
     <main>
-        <section id="evento" class="tab-content active">
+        <!-- ============ DATOS DEL EVENTO (se llenan desde datos/personajes.json) ============ -->
+        <section id="evento" class="tab-content active" role="tabpanel">
             <h2>Datos del Evento</h2>
-			<p>¡Prepárense para una tarde épica de regalos y juego de rol!</p>
-            <p><strong>Fecha:</strong> 26 de septiembre de 2025</p>
-            <p><strong>Hora:</strong> 04:00 PM</p>
-			<p><strong>Lugar:</strong> Salón de la Justicia (Auditorio Piso 11) ANLA</p>
-			<p><strong>Nota 1 ⚠️:</strong> Tenemos: <br>🚨2 Lucas (Don Lucas y Lucas Tañeda), <br>🚨2 Tormentas (Storm y Tormenta)  <br> 🚨2 Viudas Negras (Viuda Negra 1 y Viuda Negra 2)<br>Por favor, revise el listado de regalos para que ubique su personaje y consulte a quien debe dar regalo en el botón "Sorteo de Personajes"</>
-			<p>De la buena lectura de las indicaciones, dependerá el éxito de la actividad</p>
-			<p><small><s>Tengo miedo!!</s></small></p>
-			
-			<div id="map"></map>
+            <p>¡Prepárense para una tarde épica de regalos y juego de rol!</p>
+
+            <div class="evento-datos">
+                <p><strong>Fecha:</strong> <span id="evento-fecha">…</span></p>
+                <p><strong>Hora:</strong> <span id="evento-hora">…</span></p>
+                <p><strong>Lugar:</strong> <span id="evento-lugar">…</span></p>
+            </div>
+
+            <div class="aviso" id="evento-aviso"></div>
+
+            <p>De la buena lectura de las indicaciones, dependerá el éxito de la actividad.</p>
+            <p><small><s>Tengo miedo!!</s></small></p>
+
+            <div id="map" aria-label="Mapa del lugar del evento"></div>
         </section>
 
-        <section id="personajes" class="tab-content">
+        <!-- ============ PERSONAJES (se renderizan desde datos/personajes.json) ============ -->
+        <section id="personajes" class="tab-content" role="tabpanel">
             <h2>Personajes</h2>
-            <div class="swiper-container mySwiperPersonajes">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide card">
-                        <img src="./img/brujaescarlata.png" alt="Bruja Escarlata">
-                        <h3>Bruja Escarlata</h3>
-                        <ul>
-                            <li>Magia del caos.</li>
-                            <li>Manipulación Mental.</li>
-                            <li>Realidad alterada.</li>
-                        </ul>
-						
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Humidificador/difusor de aroma/pebetero - en mercado libre	</li>
-							<li><a href="https://www.panamericana.com.co/kit-de-pintar-por-numeros-hibiscus-rosie-s-644658/p" target="_blank">Kit de pintura por números</a> </li>
-							<li><a href="https://www.panamericana.com.co/soporte-para-plantas-de-24-cm-metalico-con-maceta-681401/p" target="_blank">Matera</a></li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/chapatin.png" alt="Chapatin">
-                        <h3>Chapatin</h3>
-                        <ul>
-                            <li>Viejito tierno y coqueto.</li>
-                            <li>Satírico y burlesco.</li>
-                            <li>"¡Ya me dio cosa!".</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Bono de Brissa</li>
-							<li>Bono de Ikea</li>
-							<li>Cafetera Presa francesa</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/coulson.png" alt="Coulson">
-                        <h3>Coulson</h3>
-                        <ul>
-                            <li>Agente de S.H.I.E.L.D.</li>
-                            <li>Experto en combate cuerpo contra cuerpo.</li>
-                            <li>Es un gran estratega.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li><a href="https://www.olimpica.com/vino-las-moras-cabe-s-750-ml/p" target="_blank">Vino Tinto Finca Las Moras Cabernet Sauvignon 750 Ml</a><br>Sólo en Olimpica está en promoción jejeeje 😅</li>
-							<li><a href="https://cafesoca.com/products/cafe-soca-premium-edicion-lujo?variant=40693404172487" target="_blank">Café Soca Premium House Blend Edición Caja Lujo 340 Gr</a> </li>
-							<li>Bono Panamericana</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/doctorstrange.png" alt="Doctor Strange">
-                        <h3>Doctor Strange</h3>
-                        <ul>
-                            <li>Hechicero Supremo.</li>
-                            <li>Mente brillante.</li>
-                            <li>Controla las artes místicas.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Cuaderno</li>
-							<li>Parlante</li>
-							<li>Soporte de mesa para celular</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/donlucas.png" alt="Don Lucas">
-                        <h3>Don Lucas</h3>
-                        <ul>
-                            <li>Ve el mundo de manera diferente, posiblemente tiene algún padecimiento mental.</li>
-                            <li>¿Sabías que la gente anda diciendo que tú y yo estamos locos?</li>
-                            <li>¡Dígame licenciado!</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li><a href="https://www.mercadolibre.com.co/molino-de-cafe-manual-coffee-grinder-color-negro-vitto-fiore/p/MCO41356752" target="_blank">Molino de Café Manual Coffee Grinder Color Negro - Vitto & Fiore</a></li>
-							<li><a href="https://www.mercadolibre.com.co/cafetera-prensa-francesa-bambu-600ml-de-lujo/up/MCOU2430455510" target="_blank">Cafetera Prensa Francesa Bambú 600ml De Lujo Plateado</a> </li>
-							<li><a href="https://cafesoca.com/products/cafe-soca-premium-house-blend-400-gr?variant=44994268496071" target="_blank">Café Soca Premium House Blend 400 Gr</a></li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/eltripaseca.png" alt="El Tripaseca">
-                        <h3>El Tripaseca</h3>
-                        <ul>
-                            <li>Gángster sumamente peligroso.</li>
-                            <li>Enemigo de El Chapulín Colorado.</li>
-                            <li>Conocía al Chapulin desde que los dos eran niños</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Bolso impermeable (hermético)</li>
-							<li>Libro</li>
-							<li>Velas aromáticas</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/gamora.png" alt="Gamora">
-                        <h3>Gamora</h3>
-                        <ul>
-                            <li>Maestra en artes marciales y espadachina.</li>
-                            <li>Hija de Thanos.</li>
-                            <li>"Mujer más peligrosa de la galaxia".</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Unas babuchas de capibara (talla 38)</li>
-							<li>Café</li>
-							<li>Peluche de snoopy</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/groot.png" alt="Groot">
-                        <h3>Groot</h3>
-                        <ul>
-                            <li>I'm Groot.</li>
-                            <li>I'm Groot?.</li>
-                            <li>I'm Groot!!, I'm Groot :( </li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Lo que te inspire que merezca Groot de regalo</li>
-							<li>Un vino con mix de frutos secos (si alcanza 🤪)</li>
-							<li>Bono de falabella o bono de panamericana. (Lo que quede más fácil 🫶🏻)</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/happyhogan.png" alt="Happy Hogan (Freak)">
-                        <h3>Happy Hogan (Freak)</h3>
-                        <ul>
-                            <li>Jefe de seguridad de Stark.</li>
-                            <li>Amigo de Iron Man.</li>
-                            <li>Fuerza y resistencia sobrehumanas.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Banda elástica (alta carga) para ejercicio</li>
-							<li>Cargador de celular (carga rápida) Tipo C - Para carro</li>
-							<li>Multipuerto USB</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/ironman.png" alt="Iron Man">
-                        <h3>Iron Man</h3>
-                        <ul>
-                            <li>"Soy un genio, millonario, playboy, filántropo!!".</li>
-                            <li>Armadura de alta tecnología.</li>
-                            <li>Fundador de los Vengadores.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Power bank</li>
-							<li>bonos por valor de $50.000Crepes & Waffles</li>
-							<li>Libra de café orgánico</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/loki.png" alt="Loki">
-                        <h3>Loki</h3>
-                        <ul>
-                            <li>Dios de las mentiras.</li>
-                            <li>Hermano de Thor.</li>
-                            <li>Cambiaformas y mago.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Rapidografos número 2. <br><i>Cantidad los que quieran</i></li>
-							<li>Artículos deportivos. <br><i>Puede ser pelotas de tenis.</i></li>
-							<li>Chocolate</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/lucastañeda.png" alt="Lucas Tañeda">
-                        <h3>Lucas Tañeda</h3>
-                        <ul>
-                            <li>Lucas suele presentar un trastorno menor o menos grave que el de Chaparrón Bonaparte</li>
-                            <li>Estás en lo cierto!!</li>
-                            <li>Te dio otra de tus chiripiorcas. Pero ahorita te arreglo...</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li><a href="https://www.falabella.com.co/falabella-co/product/883318962/Paragua-BENETTON/883318963" target="_blank">Paragua BENETTON</a></li>
-							<li><a href="https://articulo.mercadolibre.com.co/MCO-1398872749" target="_blank">Luz De Lectura De Libro Lampara Recargable Usb</a> </li>
-							<li>🤷🏽 NA️</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/magneto.png" alt="Magneto">
-                        <h3>Magneto</h3>
-                        <ul>
-                            <li>Habilidad para controlar y manipular campos magnéticos.</li>
-                            <li>Tiene entrenamiento para resistir ataques psíquicos.</li>
-                            <li>Mutante legendario.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Camiseta con algo de Bogotá<br>(Talla M)</li>
-							<li>Gorra de Bogotá</li>
-							<li>Otra camiseta</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/mystique.png" alt="Mystique">
-                        <h3>Mystique</h3>
-                        <ul>
-                            <li>Metamorfosis/Cambio de forma.</li>
-                            <li>Envejecimiento retardado.</li>
-                            <li>Hábil combatiente.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li><a href="https://comemucho.com/products/vino-de-jaboticaba-750ml" target="_blank">Vino de Jaboticaba</a></li>
-							<li><a href="https://tallerdehierbas.com/collections/cojines-herbales/products/cojin-cansancio-y-dolores-de-cabeza" target="_blank">Cojín herbal para tratar dolores de cabeza</a></li>
-							<li><a href="https://www.micelio.co/product-page/kit-orellana-rosada" target="_blank">Kit de cultivo de setas</a></li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/rocketraccon.png" alt="Rocket Raccoon">
-                        <h3>Rocket Raccoon</h3>
-                        <ul>
-                            <li>Genio de la tecnología y comunicaciones.</li>
-                            <li>Sentidos Agudizados.</li>
-                            <li>"¡No hay nada como yo, excepto yo!".</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Aretes largos</li>
-							<li>Libreta bitácora</li>
-							<li>Cactus o planta</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/storm.png" alt="Storm">
-                        <h3>Storm</h3>
-                        <ul>
-                            <li>Controla el clima (Tiempo atmosférico).</li>
-                            <li>Mutante de nivel de Omega.</li>
-                            <li>Hábil combatiente y líder.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Libros de neurología, ciencia, filosofía o psicología.</li>
-							<li>Vino</li>
-							<li>Chocolate / café</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/tormenta.png" alt="Tormenta">
-                        <h3>Tormenta</h3>
-                        <ul>
-                            <li>Capacidad de generar relámpagos, tornados, huracanes y cambios de temperatura.</li>
-                            <li>Líder de los X-Men.</li>
-                            <li>Sus poderes están vinculados a sus emociones.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Bono de comida crepes and waffles</li>
-							<li>Parlante bluetooth / chocolates</li>
-							<li>Refractarias de vidrio / chocolates</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/tripaseca.png" alt="Tripaseca">
-                        <h3>Tripaseca</h3>
-                        <ul>
-                            <li>Villano de Chespirito.</li>
-                            <li>Da las órdenes en el grupo de mafiosos.</li>
-                            <li>Complice de El Cuajináis</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>3 billetes de 10.000</li>
-							<li>6 billetes de 5000</li>
-							<li>15 billetes de 2000</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/viudanegra1.png" alt="Viuda Negra 1">
-                        <h3>Viuda Negra 1</h3>
-                        <ul>
-                            <li>Maestra ex-espía.</li>
-                            <li>Maestra de artes marciales.</li>
-                            <li>Mejorada mediante Biotecnología.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li>Un bono de Panamericana</li>
-							<li>Un bono para compra de cosméticos</li>
-							<li>Un bono de Falabella</li>
-						</ul>
-                    </div>
-                    <div class="swiper-slide card">
-                        <img src="./img/viudanegra2.png" alt="Viuda Negra 2">
-                        <h3>Viuda Negra 2</h3>
-                        <ul>
-                            <li>Afinidad por la manipulación psicológica.</li>
-                            <li>Habilidad del responder rápidamente a situaciones tácticas cambiantes.</li>
-                            <li>Estratega, táctica y comandante de campo.</li>
-                        </ul>
-						<p><strong>Opciones de regalo:</strong></p>
-						<ul>
-							<li><a href="https://www.temu.com/ul/kuiper/un9.html?subj=goods-un&_bg_fs=1&_p_jump_id=894&_x_vst_scene=adg&goods_id=601101578162105&sku_id=17600506114269&adg_ctx=a-9b42aec9~c-ba28ecd5~f-0bc9c653&_x_ads_sub_channel=shopping&_p_rfs=1&_x_ns_prz_type=-1&_x_ns_sku_id=17600506114269&_x_ns_gid=601101578162105&mrk_rec=1&_x_ads_channel=google&_x_gmc_account=5341306120&_x_login_type=Google&_x_ns_gg_lnk_type=adr&_x_ads_account=2651779358&_x_ads_set=22253586712&_x_ads_id=178801001647&_x_ads_creative_id=733457216552&_x_ns_source=g&_x_ns_gclid=Cj0KCQjw_rPGBhCbARIsABjq9ccK9ac_M14aQQYPxOOYJ-3pu4gJR436zxobIkQ86l9Quofs0nV_XnwaAudhEALw_wcB&_x_ns_placement=&_x_ns_match_type=&_x_ns_ad_position=&_x_ns_product_id=5341306120-17600506114269&_x_ns_target=&_x_ns_devicemodel=&_x_ns_wbraid=Ck0KCQjw267GBhDYARI8AHv5CtmLcwHmY6bm6b7w-DqQoXck0aJ0kMl4jNlG9-tDmFlmOFjdzyNmk8Gki9NAnffUM_kRDzJ6f40nGgLwNw&_x_ns_gbraid=0AAAAAo4mICHHx8-I2NDHtam10A-1v4E_M&_x_ns_targetid=pla-2373743236513&gad_source=4&gad_campaignid=22253586712&gbraid=0AAAAAo4mICHHx8-I2NDHtam10A-1v4E_M&gclid=Cj0KCQjw_rPGBhCbARIsABjq9ccK9ac_M14aQQYPxOOYJ-3pu4gJR436zxobIkQ86l9Quofs0nV_XnwaAudhEALw_wcB" target="_blank">Accesorio manilla o anillo preferiblemente de libelula</a></li>
-							<li>Libro de Dan Brown</li>
-							<li><a href="https://rockvibes-store.com/producto/camiseta-guns-nroses-slash-axl-welcome-to-the-jungle/" target="_blank">Camiseta Guns and Roses (Mujer talla M)</a></li>
-						</ul>
-                    </div>
+            <p class="subtitulo">Cada personaje trae las opciones de regalo sugeridas. Usa el buscador para encontrar el tuyo.</p>
+
+            <div class="barra-filtros">
+                <div class="buscador">
+                    <label class="sr-only" for="buscador">Buscar personaje o regalo</label>
+                    <input type="search" id="buscador" placeholder="Buscar personaje o regalo…" autocomplete="off">
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <button type="button" id="limpiar-busqueda" class="btn-limpiar" hidden>Limpiar</button>
+                <p id="contador" class="contador" aria-live="polite"></p>
             </div>
+
+            <div id="personajes-grid" class="grid-personajes"></div>
+            <p id="sin-resultados" class="sin-resultados" hidden>No se encontró ningún personaje ni regalo con ese texto.</p>
         </section>
 
-        <section id="sorteo" class="tab-content">
-            <h2>Sorteo de Personajes (Realizado con IA)</h2>
+        <!-- ============ SORTEO (se renderiza desde datos/personajes.json) ============ -->
+        <section id="sorteo" class="tab-content" role="tabpanel">
+            <h2 id="sorteo-titulo">Sorteo de Personajes (Realizado con IA)</h2>
             <div class="response-bubble">
-                <p>Se le solicitó a la IA que hicera un emparejamiento aleatorio, aquí esa su respuesta<br> <br><i>Claro, aquí tienes una asignación aleatoria para el juego de amigo secreto. ¡Que se diviertan! 🎉</i></p>
-                <ul>
-                    <li><strong>Storm</strong> le regala a <strong>Bruja Escarlata</strong></li>
-                    <li><strong>Happy Hogan (Freak)</strong> le regala a <strong>Lucas Tañeda</strong></li>
-                    <li><strong>Coulson</strong> le regala a <strong>Chapatin</strong></li>
-                    <li><strong>Iron Man</strong> le regala a <strong>Mystique</strong></li>
-                    <li><strong>Magneto</strong> le regala a <strong>Groot</strong></li>
-                    <li><strong>Tormenta</strong> le regala a <strong>Tripaseca</strong></li>
-                    <li><strong>Don Lucas</strong> le regala a <strong>Rocket Raccoon</strong></li>
-                    <li><strong>Gamora</strong> le regala a <strong>Coulson</strong></li>
-                    <li><strong>Groot</strong> le regala a <strong>Don Lucas</strong></li>
-                    <li><strong>Mystique</strong> le regala a <strong>Gamora</strong></li>
-                    <li><strong>Bruja Escarlata</strong> le regala a <strong>Happy Hogan (Freak)</strong></li>
-                    <li><strong>Tripaseca</strong> le regala a <strong>Loki</strong></li>
-                    <li><strong>Doctor Strange</strong> le regala a <strong>Viuda Negra 2</strong></li>
-                    <li><strong>Lucas Tañeda</strong> le regala a <strong>Iron Man</strong></li>
-                    <li><strong>Rocket Raccoon</strong> le regala a <strong>Viuda Negra 1</strong></li>
-                    <li><strong>Viuda Negra 1</strong> le regala a <strong>El Tripaseca</strong></li>
-                    <li><strong>Viuda Negra 2</strong> le regala a <strong>Storm</strong></li>
-                    <li><strong>El Tripaseca</strong> le regala a <strong>Doctor Strange</strong></li>
-                    <li><strong>Chapatin</strong> le regala a <strong>Magneto</strong></li>
-                    <li><strong>Loki</strong> le regala a <strong>Tormenta</strong></li>
-                </ul>
+                <p id="sorteo-nota"></p>
+                <ul id="sorteo-lista" class="lista-sorteo"></ul>
             </div>
         </section>
-
-        
     </main>
-	<footer>
+
+    <footer>
         <p>Idea apoyada por fpena.</p>
-		<p style="font-size:7px;">Quedo melo caramelo</p>
+        <p style="font-size:7px;">Quedo melo caramelo</p>
     </footer>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <noscript>
+        <p style="padding:20px;text-align:center;">Esta página necesita JavaScript activado para leer los personajes del archivo <code>datos/personajes.json</code>.</p>
+    </noscript>
+
     <script src="script.js"></script>
 </body>
 </html>
