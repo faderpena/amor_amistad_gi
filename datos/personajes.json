@@ -32,6 +32,7 @@
     "nota": "Emparejamiento generado al azar (nadie se regala a sí mismo): cada personaje regala a alguien distinto y recibe un solo regalo.",
     "asignaciones": [
       { "de": "Batman", "para": "Obi one kenobi" },
+      { "de": "Battlecruiser Operational (starcraft)", "para": "Mike Wazowski" },
       { "de": "Dr. Facilier", "para": "Rick Prime" },
       { "de": "Drácula", "para": "Rafiki del rey León" },
       { "de": "Elma Chacón", "para": "Drácula" },
@@ -40,6 +41,7 @@
       { "de": "Mafalda 1", "para": "Elma Chacón" },
       { "de": "Mafalda 2", "para": "Walter White — Breaking Bad" },
       { "de": "Michael Corleone", "para": "Inspector gadget" },
+      { "de": "Mike Wazowski", "para": "Battlecruiser Operational (starcraft)" },
       { "de": "Mushu (el dragón de Mulán)", "para": "Dr. Facilier" },
       { "de": "Obi one kenobi", "para": "Mafalda 1" },
       { "de": "Rafiki del rey León", "para": "Michael Corleone" },
@@ -60,6 +62,17 @@
         { "nombre": "Vino", "url": null, "nota": null },
         { "nombre": "Guantes de moto", "url": null, "nota": null },
         { "nombre": "Café", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "battlecruiser-operational",
+      "nombre": "Battlecruiser Operational (starcraft)",
+      "url": "https://static.wikia.nocookie.net/starcraft/images/d/d9/Battlecruiser_SC2_Head2.jpg/revision/latest/scale-to-width-down/732?cb=20100906183734",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Camiseta talla XL", "url": "https://articulo.mercadolibre.com.co/MCO-1505997335-catalogo-camiseta-rock-estampada-rf58-vt-lucario-store-_JM?attributes=COLOR%3ATmVncm8%3D%2CPRINT_DESIGN%3AT2FzaXM%3D&quantity=1&picker=true&searchVariation=182228210504", "nota": "Camiseta de la banda OASIS" },
+        { "nombre": "No", "url": null, "nota": null },
+        { "nombre": "No", "url": null, "nota": null }
       ]
     },
     {
@@ -172,6 +185,17 @@
         { "nombre": "Bolas de tenis + chocolate", "url": null, "nota": null },
         { "nombre": "Novela sencilla y corta en inglés, o novela en español basada en fraude financiero, o bono Librería Nacional", "url": null, "nota": null },
         { "nombre": "Rapidógrafos 0.2 color negro + chocolates", "url": null, "nota": null }
+      ]
+    },
+    {
+      "id": "mike-wazowski",
+      "nombre": "Mike Wazowski",
+      "url": "https://learning.creativeones.art/wp-content/uploads/2021/09/MikeBackground-scaled-2559x1918.jpg",
+      "poderes": [],
+      "regalos": [
+        { "nombre": "Libro - novelas de ciencia ficción", "url": null, "nota": null },
+        { "nombre": "Botella de vino", "url": null, "nota": null },
+        { "nombre": "Velas decorativas - aromatizadas", "url": null, "nota": null }
       ]
     },
     {
